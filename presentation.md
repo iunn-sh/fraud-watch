@@ -1,278 +1,206 @@
 ---
 marp: true
-theme: aurora-blue
-# テーマ一覧は node scripts/list-themes.mjs で表示、npm run gallery で実物を見比べられる
 title: 詐騙巡守隊
+theme: is0383kk
 paginate: true
-size: 16:9
-html: true
 ---
 
 <!-- _class: title -->
-<!-- _paginate: false -->
 
-<div class="orb a"></div>
-<div class="orb b"></div>
-<div class="eyebrow"><span class="dot"></span>TECH TALK</div>
+# プレゼンテーションタイトル
+## 部署名・チーム名
 
-# 発表タイトルをここに<br>2行までを目安に
+発表者氏名
 
-## 〜サブタイトル〜
-
-<div class="accent"></div>
-
-<div class="meta">2026/01/01<br>@your_handle</div>
-
----
-
-<!-- _class: content -->
-<!-- レイアウト: grid-cards — アジェンダ・概要の列挙（2〜4項目） -->
-
-<div class="head"><h1 class="bare">今日話すこと</h1></div>
-<div class="body">
-<div class="grid-cards cols-2">
-  <div class="card"><div class="badge">1</div><div class="txt">1つめのトピック</div></div>
-  <div class="card"><div class="badge">2</div><div class="txt">2つめのトピック</div></div>
-  <div class="card"><div class="badge">3</div><div class="txt">3つめのトピック</div></div>
-  <div class="card"><div class="badge">4</div><div class="txt">4つめのトピック</div></div>
-</div>
-</div>
+2026年4月8日
 
 ---
 
 <!-- _class: section -->
-<!-- レイアウト: 章扉スライド -->
 
-<div class="side"></div>
-<div class="chapter-num">CHAPTER 01</div>
-<h1>章タイトル</h1>
-<div class="bar"></div>
+# 目次
 
 ---
 
-<!-- _class: content -->
-<!-- レイアウト: panel-list — 基本の箇條書き（3〜5項目が目安） -->
+# 通常スライド（ヘッダーあり）
 
-<div class="head"><h1 class="bare">基本の箇條書きスライド</h1></div>
-<div class="body">
-<ul class="panel-list">
-  <li>要點を1行で書く。<strong>強調</strong>は1項目1箇所まで</li>
-  <li>2行に折り返す場合は50文字程度で収める</li>
-  <li>項目數は5つまで。あふれるならスライドを分ける</li>
-</ul>
-</div>
+- 箇條書き項目 1
+- 箇條書き項目 2
+  - ネスト項目 2-1
+  - ネスト項目 2-2
+- 箇條書き項目 3
+
+通常の段落テキストはこのように表示されます。**太字**や*斜體*も使えます。
 
 ---
 
-<!-- _class: content middle -->
-<!-- レイアウト: middle — 中身が少ないときに .body を上下中央へ寄せる -->
+# 番號付きリスト
 
-<div class="head"><h1 class="bare">上下中央寄せのスライド</h1></div>
-<div class="body">
-<ul class="panel-list">
-  <li><code>content</code> に <code>middle</code> を足すと、下側に殘る余白がなくなる</li>
-  <li>見出しは上のまま、<strong>.body の中身だけ</strong>が中央に來る</li>
-</ul>
-<div class="callout"><strong>使いどころ:</strong> 部品が2〜3個で下が空くスライド。詰まっているスライドには不要</div>
-</div>
+1. 最初のステップ
+2. 次のステップ
+   1. サブステップ A
+   2. サブステップ B
+3. 最後のステップ
 
 ---
 
-<!-- _class: content -->
-<!-- レイアウト: 番號付きヘッダ — 章內のステップ解説に使う -->
-<!-- 番號は丸い地の上に乗るので、丸數字ではなく 1 2 3 と書く -->
+# 見出しレベル
 
-<div class="head"><div class="num">1</div><h1>番號付き見出しのスライド</h1></div>
-<div class="body">
-<ul class="panel-list">
-  <li>章の中で手順・ステップを追うときは番號付きヘッダを使う</li>
-  <li>番號は <code>1</code> <code>2</code> <code>3</code> … と手書きする（丸數字は使わない）</li>
-</ul>
-</div>
+## h2 見出し
+
+### h3 見出し
+
+#### h4 見出し
+
+本文テキスト。`インラインコード`も使えます。
 
 ---
 
-<!-- _class: content -->
-<!-- レイアウト: stats — 數字の実績を3つ並べる -->
+# テーブル
 
-<div class="head"><h1 class="bare">數字で見せるスライド</h1></div>
-<div class="body">
-<div class="stats">
-  <div class="stat-card"><div class="num">140<span class="unit">件</span></div><div class="label">指標のラベル</div></div>
-  <div class="stat-card"><div class="num">6<span class="unit">本</span></div><div class="label">指標のラベル</div></div>
-  <div class="stat-card"><div class="num">98<span class="unit">%</span></div><div class="label">指標のラベル</div></div>
-</div>
-<ul class="panel-list">
-  <li>數字の下に補足の箇條書きを1〜2項目まで置ける</li>
-</ul>
-</div>
+| 項目 | 説明 | 備考 |
+|------|------|------|
+| 項目 A | 説明テキスト A | 備考 A |
+| 項目 B | 説明テキスト B | 備考 B |
+| 項目 C | 説明テキスト C | 備考 C |
 
 ---
 
-<!-- _class: content -->
-<!-- レイアウト: compare — 2案比較。採用側に selected を付ける -->
+# コードブロック
 
-<div class="head"><h1 class="bare">2案比較のスライド</h1></div>
-<div class="body compare">
-  <div class="compare-card">
-    <div class="tag">案A</div>
-    <h3>案Aの名前</h3>
-    <p>案Aの説明文。特徴を1〜2文で</p>
-  </div>
-  <div class="compare-card selected">
-    <div class="tag">採用</div>
-    <h3>案Bの名前</h3>
-    <p>採用案の説明文。決め手を1〜2文で</p>
-  </div>
-</div>
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
 
----
-
-<!-- _class: content -->
-<!-- レイアウト: issue-grid — 問題→解決の2x2 -->
-<!-- 3件なら issue-grid cols-3 rows-1、2件なら issue-grid rows-1 -->
-
-<div class="head"><h1 class="bare">問題と解決の一覧</h1></div>
-<div class="body issue-grid">
-  <div class="issue-card"><div class="prob">問題1のタイトル</div><div class="sol"><span class="arrow">→</span> 解決策を1行で</div></div>
-  <div class="issue-card"><div class="prob">問題2のタイトル</div><div class="sol"><span class="arrow">→</span> 解決策を1行で</div></div>
-  <div class="issue-card"><div class="prob">問題3のタイトル</div><div class="sol"><span class="arrow">→</span> 解決策を1行で</div></div>
-  <div class="issue-card"><div class="prob">問題4のタイトル</div><div class="sol"><span class="arrow">→</span> 解決策を1行で</div></div>
-</div>
-
----
-
-<!-- _class: content -->
-<!-- レイアウト: flow — 橫方向のプロセス（3〜5ステップ） -->
-
-<div class="head"><h1 class="bare">プロセスフローのスライド</h1></div>
-<div class="body">
-<div class="flow">
-  <div class="flow-step"><span class="step-label">Step1</span>やること</div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-step"><span class="step-label">Step2</span>やること</div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-step"><span class="step-label">Step3</span>やること</div>
-</div>
-<div class="callout"><strong>ポイント:</strong> フローの下に補足のコールアウトを置ける</div>
-</div>
-
----
-
-<!-- _class: content -->
-<!-- レイアウト: shot-full — スクリーンショット1枚を大きく -->
-
-<div class="head"><h1 class="bare">スクリーンショット全面</h1></div>
-<div class="body shot-full">
-  <img src="assets/placeholder.png" alt="スクリーンショットの説明">
-</div>
-
----
-
-<!-- _class: content -->
-<!-- レイアウト: shot-split — 左テキスト+右スクショ -->
-
-<div class="head"><h1 class="bare">テキストとスクショの2分割</h1></div>
-<div class="body shot-split">
-<ul class="panel-list">
-  <li>左に説明の箇條書き</li>
-  <li>右に対応するスクリーンショット</li>
-</ul>
-<div>
-  <img src="assets/placeholder.png" alt="スクリーンショットの説明">
-  <div class="shot-cap">キャプションを1行で</div>
-</div>
-</div>
-
----
-
-<!-- _class: content -->
-<!-- レイアウト: two-col — 汎用2カラム -->
-
-<div class="head"><h1 class="bare">汎用2カラム</h1></div>
-<div class="body two-col">
-<ul class="panel-list">
-  <li>左カラムの內容</li>
-</ul>
-<ul class="panel-list">
-  <li>右カラムの內容</li>
-</ul>
-</div>
-
----
-
-<!-- _class: content -->
-<!-- レイアウト: learn-grid — まとめ・學びの番號付きリスト（最大8） -->
-<!-- 項目は列方向に流れる。4項目なら learn-grid rows-2、6項目なら rows-3 -->
-<!-- 全項目が1行に収まるなら oneline を足すと番號がテキストと同じ高さに揃う -->
-
-<div class="head"><h1 class="bare">まとめ・學び</h1></div>
-<div class="body">
-<div class="learn-grid">
-  <div class="learn-item"><div class="n">1</div><div class="t">學び1つめ</div></div>
-  <div class="learn-item"><div class="n">2</div><div class="t">學び2つめ</div></div>
-  <div class="learn-item"><div class="n">3</div><div class="t">學び3つめ</div></div>
-  <div class="learn-item"><div class="n">4</div><div class="t">學び4つめ</div></div>
-  <div class="learn-item"><div class="n">5</div><div class="t">學び5つめ</div></div>
-  <div class="learn-item"><div class="n">6</div><div class="t">學び6つめ</div></div>
-  <div class="learn-item"><div class="n">7</div><div class="t">學び7つめ</div></div>
-</div>
-</div>
-
----
-
-<!-- _class: lead -->
-<!-- レイアウト: lead — 伝えたいメッセージを1つだけ大きく -->
-
-# 一番伝えたいことを<br>**ここに大きく**書く
-
-補足の一言があればここに
-
----
-
-<!-- _class: quote -->
-<!-- レイアウト: quote — 引用・キーフレーズ -->
-
-> 引用文やキーフレーズを
-> ここに置く
-
-<div class="cite">— 出典・発言者名</div>
-
----
-
-<!-- クラスなし: 素のMarkdown（表・コード）もテーマ済み -->
-
-# 素のMarkdownスライド
-
-| 項目 | 説明 |
-| --- | --- |
-| 行1 | 表もテーマのスタイルが當たる |
-| 行2 | コードも同様 |
-
-```bash
-npm run build -- slides/my-deck pdf
+console.log(greet('World'));
 ```
 
 ---
 
-<!-- _class: content reference -->
-<!-- レイアウト: reference — 參考リンク -->
+# 引用
 
-<div class="head"><h1 class="bare">參考</h1></div>
-<div class="ref-card">
-  <div class="title">參考資料のタイトル</div>
-  <a class="url" href="https://example.com">example.com</a>
+> これは引用文のサンプルです。
+> 複數行の引用も記述できます。
+
+---
+
+<!-- _class: no-header -->
+
+ヘッダーなしスライド（`no-header` クラス）
+
+コンテンツが多い場合やヘッダーが不要な場面で使います。
+
+---
+
+<!-- _class: section -->
+
+# セクション區切り
+
+---
+
+# カラムレイアウト
+<!-- _class: column-layout -->
+
+<div class="column">
+
+## 左カラム
+
+- 左側の項目 1
+- 左側の項目 2
+- 左側の項目 3
+
+</div>
+
+<div class="column">
+
+## 右カラム
+
+- 右側の項目 1
+- 右側の項目 2
+- 右側の項目 3
+
 </div>
 
 ---
 
-<!-- _class: closing -->
-<!-- レイアウト: closing — 締めスライド -->
+# 畫像右組態（50%）
+<!-- _class: content-image-right -->
 
-<div class="orb a"></div>
+テキストは左側に表示されます。
+
+- 説明項目 1
+- 説明項目 2
+- 説明項目 3
+
+![](https://placehold.co/400x300)
+
+---
+
+# 畫像左組態（50%）
+<!-- _class: content-image-left -->
+
+テキストは右側に表示されます。
+
+- 説明項目 1
+- 説明項目 2
+- 説明項目 3
+
+![](https://placehold.co/400x300)
+
+---
+
+# 畫像右組態（30%）
+<!-- _class: content-image-right content-30 -->
+
+`content-30` クラスを追加すると畫像幅が 30% になります。
+
+テキスト領域が広くなるので、説明が多い場合に使います。
+
+![](https://placehold.co/400x600)
+
+---
+
+<!-- _class: image -->
+
+![](https://placehold.co/1280x720)
+
+---
+
+# テキストカラー（青）
+<!-- _class: h1-text-blue -->
+
+h1 のみ青色になります（`h1-text-blue`）。
+
+---
+
+<!-- _class: all-text-blue -->
+
+# テキストカラー（全體青）
+
+全テキストが青色になります（`all-text-blue`）。
+
+- 項目 1
+- 項目 2
+
+---
+
+# テキストカラー（赤）
+<!-- _class: h1-text-red -->
+
+h1 のみ赤色になります（`h1-text-red`）。
+
+---
+
+# テキスト中央揃え
+<!-- _class: align-center all-text-center -->
+
+このスライドはテキストが中央揃えになります。
+
+コンテンツも垂直中央に組態されます。
+
+---
+
+<!-- _class: section -->
 
 # ご清聴ありがとうございました
-
-<div class="accent"></div>
-
-@your_handle

@@ -142,7 +142,7 @@ section table td {
 }
 section table tr:nth-child(even) td { background: var(--gray-50); }
 section code {
-   font-family: 'JetBrainsMono', monospace;
+  font-family: 'JetBrainsMono', monospace;
   background: var(--gray-100);
   color: var(--primary-dark);
   font-weight: 600;

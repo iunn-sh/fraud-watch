@@ -1,0 +1,563 @@
+/*
+ * @theme is0383kk
+ * @auto-scaling true
+*/
+
+@import 'default';
+@import url("https://font.emtech.cc/css/TaipeiSansTC");
+@import url("https://font.emtech.cc/css/JetBrainsMono");
+
+:root {
+    /* ブランドカラー：アクセント・強調・警告・補助テキストに使用 */
+    --blue-very-deep: #2C67E5; /* メインアクセント（リンク・グラデーション・strong 強調） */
+    --blue-light: #45A5C5;     /* ヘッダー區切り線グラデーションの終端色 */
+    --red-deep: #DF3756;       /* 警告・エラー・赤文字強調 */
+    --gray-light: #595959;     /* 補助テキスト（注釈・blockquote の文字色） */
+    --gray-lightest: #999999;  /* 最も目立たないテキスト（フッター・ページ番號） */
+    --white: #FFFFFF;
+    --black: #000000;
+
+    /* 背景色 */
+    --bg-default: #FFFFFF;     /* 通常コンテンツスライドの背景 */
+    --bg-accent: #F3F3F3;      /* セクションスライド・テーブルヘッダー・畫像パネルの背景 */
+    --bg-accent-code: #e1e1e1; /* コードブロック・インラインコードの背景 */
+    --bg-title: #f5f5f5;       /* タイトルスライドの背景（SVG 裝飾の下地） */
+    --border-color: #D9D9D9;   /* テーブルの罫線色 */
+
+    /* フォントファミリー */
+    --font-family: 'TaipeiSansTC', sans-serif;
+
+    /* フォントサイズ（括弧內は PowerPoint 換算サイズの目安） */
+    --font-size-title-slide: 43px;   /* タイトルスライドの h1 (32pt) */
+    --font-size-content-title: 32px; /* コンテンツスライドのヘッダー・h2・h3 (24pt) */
+    --font-size-body: 21px;          /* 本文・リスト・blockquote (16pt) */
+    --font-size-note: 12px;          /* フッター・ページ番號・注釈 */
+    --font-size-table: 18px;         /* テーブルセル */
+
+    /* 行の高さ（用途別に 3 段階で使い分け） */
+    --line-height-tight: 1.15;  /* 見出し（h1〜h2）：詰めた行間 */
+    --line-height-normal: 1.21; /* h3〜h6・small：標準行間 */
+    --line-height-loose: 1.5;   /* 本文・リスト・タイトルスライドのメタ情報：ゆったり行間 */
+
+    /* 余白：スライド內の基準となる間隔 */
+    --spacing-small: 30px;   /* フッター・ページ番號のスライド端からの距離 */
+    --spacing-medium: 60px;  /* スライド左右パディング・ヘッダーの左インデント */
+    --spacing-large: 100px;  /* スライド上部パディング・タイトルスライドの左インデント */
+
+    /* ヘッダーバー：コンテンツスライド上部のタイトル帯 */
+    --header-height: 80px;      /* ヘッダーバーの高さ */
+    --header-line-height: 4px;  /* ヘッダー下部に引くグラデーション區切り線の太さ */
+    --header-line-top: 85px;    /* 區切り線の top 位置（= header-height + 5px） */
+
+    /* ロゴ畫像のサイズ・組態基準 */
+    --logo-width-content: 120px;  /* コンテンツスライドのロゴ幅 */
+    --logo-width-title: 150px;    /* タイトルスライドのロゴ幅 */
+    --logo-height-title: 65px;    /* タイトルスライドのロゴ高さ */
+    --logo-right-content: 55px;   /* コンテンツスライドのロゴ・區切り線の right 基準値 */
+    --logo-right-title: 80px;     /* タイトルスライドのロゴ・フッターの right 基準値 */
+
+    /* タイトルスライド固有のレイアウト */
+    --title-slide-top: 200px; /* メインタイトル（h1）のスライド上端からの距離 */
+}
+
+/* ===============================================
+   基本スタイル：全要素のデフォルト文字色を黒に統一
+   （コードブロック內の色付けは除外）
+   =============================================== */
+
+*:not(code *) {
+    color: var(--black);
+}
+
+/* ===============================================
+   見出し：h1〜h6 の共通スタイルと個別サイズ設定
+   =============================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-bottom: 0;
+    line-height: var(--line-height-tight);
+
+    > strong {
+        color: var(--blue-very-deep);
+    }
+
+    + ul,
+    + ol {
+        margin-top: 0;
+    }
+}
+
+h1 {
+    font-size: var(--font-size-title-slide);
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+h2 {
+    font-size: var(--font-size-content-title);
+}
+
+h3 {
+    font-size: var(--font-size-content-title);
+    line-height: var(--line-height-normal);
+}
+
+h4, h5, h6 {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-normal);
+}
+
+/* ===============================================
+   本文・段落：p 要素のフォントサイズ・行間・余白
+   =============================================== */
+
+p {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-loose);
+    margin: 0 0 8px 0;
+}
+
+/* ===============================================
+   リスト：ul・ol・li のインデント・行間・マーカー調整
+   =============================================== */
+
+ul, ol {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-loose);
+    padding-left: 4px;
+    margin: 0 0 8px 22px;
+}
+
+ol {
+    margin-left: 32px;
+}
+
+li {
+    padding-top: 6px;
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    & + li {
+        margin-top: 0;
+    }
+
+    &::marker {
+        margin-left: 6px;
+    }
+
+    ul, ol {
+        margin-left: 0;
+        padding-left: 32px;
+        margin-top: 0;
+    }
+}
+
+/* ===============================================
+   インライン要素：strong・em・code・a・small
+   =============================================== */
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+code {
+    font-family: 'JetBrainsMono', monospace;
+    background-color: var(--bg-accent-code);
+    color: var(--black);
+}
+
+a {
+    color: var(--blue-very-deep);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+small {
+    font-size: var(--font-size-note);
+    color: var(--gray-light);
+    line-height: var(--line-height-normal);
+}
+
+/* ===============================================
+   ブロック要素：コードブロック・blockquote
+   =============================================== */
+
+:is(pre, marp-pre) {
+    background-color: var(--bg-accent-code);
+    font-size: var(--font-size-body);
+    margin-bottom: 8px;
+}
+
+blockquote {
+    font-size: var(--font-size-body);
+    border-left: 4px solid var(--gray-light);
+    padding-left: 1rem;
+    margin: 12px 4px;
+    font-style: italic;
+
+    &::after,
+    &::before,
+    p::after {
+        display: none;
+    }
+}
+
+/* ===============================================
+   テーブル：罫線・ヘッダー背景・セル背景の設定
+   =============================================== */
+
+table {
+    font-size: var(--font-size-table);
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: var(--white);
+
+    :is(th, td) {
+        border: 1.3px solid var(--border-color);
+    }
+
+    thead th {
+        background-color: var(--bg-accent);
+        font-weight: 400;
+    }
+
+    td {
+        background-color: var(--white);
+    }
+}
+
+/* ===============================================
+   ヘッダー・フッター：Marp の header/footer ディレクティブで表示される要素
+   =============================================== */
+
+header, footer {
+    font-size: var(--font-size-note);
+    color: var(--gray-lightest);
+    position: absolute;
+    bottom: var(--spacing-small);
+}
+
+header {
+    left: var(--spacing-small);
+}
+
+footer {
+    right: var(--logo-right-title);
+    left: auto;
+}
+
+/* ===============================================
+   セクション（スライド）：全スライド共通の基本レイアウト
+   ヘッダーバー・ロゴ・ページ番號・グラデーション區切り線を組態する
+   =============================================== */
+
+section {
+    background-color: var(--bg-default);
+    background-image: none;
+    font-family: var(--font-family);
+    height: 100%;
+    padding: var(--spacing-large) var(--spacing-medium) 0 var(--spacing-medium);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+
+    /* Marp が自動生成するページ番號の位置・スタイル（右下に組態） */
+    &::after {
+        position: absolute;
+        bottom: var(--spacing-small);
+        right: var(--spacing-small);
+        font-size: var(--font-size-note);
+        color: var(--gray-lightest);
+    }
+
+    /* タイトルスライド以外の右上に表示するロゴ畫像（::before で描畫） */
+    &:not(.title)::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        right: var(--logo-right-content);
+        width: var(--logo-width-content);
+        height: var(--header-height);
+        background-image: url('./logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        z-index: 10;
+    }
+
+    /* スライド上部のヘッダーバー：h1 をスライド上端に固定してタイトル帯として表示する */
+    > h1:first-child:not(.no-header > h1) {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: var(--header-height);
+        display: flex;
+        align-items: flex-end;
+        padding-left: var(--spacing-medium);
+        padding-bottom: 6px;
+        margin: 0;
+        font-size: var(--font-size-content-title);
+
+        /* ヘッダーバー直下に引くグラデーション區切り線（ロゴとの間の空白を避けて組態） */
+        &::after {
+            content: "";
+            position: absolute;
+            top: var(--header-line-top);
+            left: var(--logo-right-content);
+            right: var(--logo-width-content);
+            height: var(--header-line-height);
+            background: linear-gradient(to right, var(--blue-very-deep), var(--blue-light));
+            z-index: 100;
+        }
+    }
+}
+
+/* ===============================================
+   スライドバリエーション：クラスを指定して切り替えるレイアウト
+   =============================================== */
+
+/* .no-header：ヘッダーバーを表示しないスライド（上部パディングを縮小） */
+section.no-header {
+    padding: var(--spacing-small) var(--spacing-medium) 0 var(--spacing-medium);
+}
+
+/* .title：表紙スライド（SVG 裝飾背景・ロゴ・タイトル・メタ情報を絶対組態） */
+section.title {
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--bg-title);
+    padding: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="none"><defs><linearGradient id="diag" x1="0%25" y1="100%25" x2="100%25" y2="0%25"><stop offset="0%25" stop-color="%232C67E5"/><stop offset="100%25" stop-color="%2345A5C5" stop-opacity="0.9"/></linearGradient><linearGradient id="topbar" x1="0%25" y1="0%25" x2="100%25" y2="0%25"><stop offset="0%25" stop-color="%232C67E5"/><stop offset="70%25" stop-color="%2345A5C5"/><stop offset="100%25" stop-color="%2345A5C5" stop-opacity="0"/></linearGradient></defs><rect x="0" y="0" width="1920" height="7" fill="url(%23topbar)"/><polygon points="720,1080 1920,160 1920,1080" fill="%2345A5C5" opacity="0.13"/><polygon points="950,1080 1920,360 1920,1080" fill="%2345A5C5" opacity="0.22"/><polygon points="1100,1080 1920,500 1920,1080" fill="url(%23diag)" opacity="0.92"/><polygon points="1420,1080 1920,760 1920,1080" fill="%232C67E5" opacity="0.55"/></svg>');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    /* タイトルスライド右上に表示するロゴ畫像 */
+    &::before {
+        content: "";
+        position: absolute;
+        top: var(--spacing-medium);
+        right: var(--logo-right-title);
+        width: var(--logo-width-title);
+        height: var(--logo-height-title);
+        background-image: url('./logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right center;
+        z-index: 10;
+    }
+
+    /* タイトルスライドではページ番號を非表示にする */
+    &::after {
+        display: none;
+    }
+
+    /* メインタイトル（h1）：ヘッダーバーを上書きして絶対組態に切り替える */
+    > h1:first-child {
+        text-align: left;
+        position: absolute !important;
+        top: var(--title-slide-top) !important;
+        left: var(--spacing-large) !important;
+        transform: none !important;
+        width: auto !important;
+        max-width: calc(100% - 200px) !important;
+        height: auto !important;
+        padding: 0 !important;
+        font-size: var(--font-size-title-slide) !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+        display: block !important;
+        font-weight: 700 !important;
+
+        &::after {
+            display: none !important;
+        }
+    }
+
+    /* 部署名・チーム名（h2）：スライド左下寄りに絶対組態 */
+    h2 {
+        position: absolute;
+        bottom: 250px;
+        left: var(--spacing-large);
+        font-size: var(--font-size-body);
+        font-weight: 700;
+        margin: 0;
+        line-height: var(--line-height-loose);
+    }
+
+    /* 発表者名・日付（p）：h2 の下に続けて絶対組態（2行目は :nth-of-type(2) でさらに下にずらす） */
+    p {
+        position: absolute;
+        bottom: 210px;
+        left: var(--spacing-large);
+        font-size: var(--font-size-body);
+        margin: 0;
+        line-height: var(--line-height-loose);
+
+        &:nth-of-type(2) {
+            bottom: 170px;
+        }
+    }
+
+    footer {
+        color: var(--white);
+    }
+}
+
+/* .section：章區切りスライド（背景色変更・コンテンツを垂直中央に組態・ページ番號非表示） */
+section.section {
+    background-color: var(--bg-accent);
+    padding: 0 var(--spacing-large);
+    justify-content: center;
+
+    h1 {
+        position: static;
+    }
+
+    > *:not(footer) {
+        margin: 0;
+        position: static;
+    }
+}
+
+/* ===============================================
+   畫像スライド：畫像の組態パターンを制御するクラス群
+   =============================================== */
+
+section.image > p:has(img) {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section.content-image > p:has(img) {
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+:is(section.content-image-right, section.content-image-left) p:has(img) {
+    position: absolute;
+    top: var(--header-height);
+    height: calc(100% - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+    background-color: var(--bg-accent);
+
+    &::after {
+        display: none;
+    }
+}
+
+/* .content-image-right：テキストを左に、畫像を右パネルに組態
+   .content-30〜80 を追加するとテキスト幅の割合を変更できる（例：content-30 → テキスト30%） */
+section.content-image-right {
+    padding-right: 50%;
+
+    &.content-30 { padding-right: 70%; }
+    &.content-40 { padding-right: 60%; }
+    &.content-60 { padding-right: 40%; }
+    &.content-70 { padding-right: 30%; }
+    &.content-80 { padding-right: 20%; }
+
+    p:has(img) {
+        right: 0;
+        padding: 0 20px 0 16px;
+    }
+}
+
+/* .content-image-left：テキストを右に、畫像を左パネルに組態
+   .content-30〜80 を追加するとテキスト幅の割合を変更できる（例：content-30 → テキスト30%） */
+section.content-image-left {
+    padding-left: 50%;
+
+    &.content-30 { padding-left: 70%; }
+    &.content-40 { padding-left: 60%; }
+    &.content-60 { padding-left: 40%; }
+    &.content-70 { padding-left: 30%; }
+    &.content-80 { padding-left: 20%; }
+
+    p:has(img) {
+        left: 0;
+        padding: 0 16px 0 20px;
+    }
+}
+
+/* .image-shadow：スライド內の img 要素にドロップシャドウを追加する */
+section.image-shadow img {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================================
+   テキストスタイル：クラス指定で文字の組態・色を変更する
+   =============================================== */
+
+/* 中央揃え：all-text-center（全要素）/ h1〜h6-text-center（見出し個別）/ text-center（p のみ）
+   align-center はコンテンツを垂直中央に寄せる（text-align ではなく justify-content を変更） */
+section.all-text-center,
+section.h1-text-center h1,
+section.h2-text-center h2,
+section.h3-text-center h3,
+section.h4-text-center h4,
+section.h5-text-center h5,
+section.h6-text-center h6,
+section.text-center p {
+    text-align: center;
+}
+
+section.align-center {
+    justify-content: center;
+}
+
+/* 文字色（青）：all-text-blue（全要素）/ text-blue（p のみ） */
+section.all-text-blue *,
+section.text-blue p {
+    color: var(--blue-very-deep);
+}
+
+/* 文字色（赤）：all-text-red（全要素）/ h1〜h6-text-red（見出し個別）/ text-red（p のみ） */
+section.all-text-red *,
+section.h1-text-red h1,
+section.h2-text-red h2,
+section.h3-text-red h3,
+section.h4-text-red h4,
+section.h5-text-red h5,
+section.h6-text-red h6,
+section.text-red p {
+    color: var(--red-deep);
+}
+
+/* ===============================================
+   レイアウト：特殊な組態パターン
+   =============================================== */
+
+/* .column-layout：子要素の .column を橫並びにする 2 カラムレイアウト */
+section.column-layout {
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-around;
+
+    .column {
+        width: 50%;
+    }
+}

@@ -17,5 +17,5 @@ brew install marp-cli
 marp --server --html ./
 
 # export
-marp --theme theme/aurora-blue.css --html presentation.md
+marp --theme theme/is0383kk.css --html presentation.md
 ```
