@@ -4,7 +4,7 @@
 */
 
 @import 'default';
-@import url("https://font.emtech.cc/css/TaipeiSansTC");
+@import url("https://font.emtech.cc/css/GenYoGothicTW");
 @import url("https://font.emtech.cc/css/JetBrainsMono");
 
 :root {
@@ -26,7 +26,7 @@
     --mark-bg: #ffd60a;
 
     /* フォントファミリー */
-    --font-family: 'TaipeiSansTC', sans-serif;
+    --font-family: 'GenYoGothicTW', sans-serif;
 
     /* フォントサイズ（括弧內は PowerPoint 換算サイズの目安） */
     --font-size-title-slide: 2.3em;   /* タイトルスライドの h1 (32pt) */

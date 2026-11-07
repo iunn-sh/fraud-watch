@@ -95,9 +95,34 @@ iThome 2025.10
 
 # 目標
 
-1) 個人資料 :identification_card:
-2) 錢：現金、匯款、付款資訊 :moneybag:
-3) 個人資料＋錢 :identification_card: :moneybag:
+<!-- _class: column-layout -->
+
+<div class="column">
+
+1) **個人資料** :identification_card:
+
+* 姓名
+* 身分證字號
+* 電話
+* 地址
+
+</div>
+
+<div class="column">
+
+2) **錢** :moneybag:
+
+* 現金
+* 匯款
+* 付款資訊
+
+</div>
+
+<div class="column">
+
+3) **個人資料**＋**錢** :identification_card: :moneybag:
+
+</div>
 
 ---
 
