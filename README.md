@@ -4,8 +4,8 @@
 詐騙巡守隊：一窺前中後
 
 * Framework [marp-team/marp-cli](https://github.com/marp-team/marp-cli)
-* Theme [unsolublesugar/marp-slides-studio](https://github.com/unsolublesugar/marp-slides-studio)
-* Font [IBM PlexSans TC](https://font.emtech.cc/fonts/IBMPlexSansTC)
+* Theme [is0383kk/marp-template](https://github.com/is0383kk/marp-template)
+* Font [台北黑體](https://font.emtech.cc/fonts/TaipeiSansTC)
 * Font [JetBrains Mono](https://font.emtech.cc/fonts/JetBrainsMono)
 * Image [Unsplash](https://unsplash.com/)
 

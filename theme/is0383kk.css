@@ -28,11 +28,11 @@
     --font-family: 'TaipeiSansTC', sans-serif;
 
     /* フォントサイズ（括弧內は PowerPoint 換算サイズの目安） */
-    --font-size-title-slide: 43px;   /* タイトルスライドの h1 (32pt) */
-    --font-size-content-title: 32px; /* コンテンツスライドのヘッダー・h2・h3 (24pt) */
-    --font-size-body: 21px;          /* 本文・リスト・blockquote (16pt) */
-    --font-size-note: 12px;          /* フッター・ページ番號・注釈 */
-    --font-size-table: 18px;         /* テーブルセル */
+    --font-size-title-slide: 2.3em;   /* タイトルスライドの h1 (32pt) */
+    --font-size-content-title: 1.2em; /* コンテンツスライドのヘッダー・h2・h3 (24pt) */
+    --font-size-body: 1em;          /* 本文・リスト・blockquote (16pt) */
+    --font-size-note: 0.6em;          /* フッター・ページ番號・注釈 */
+    --font-size-table: 0.9em;         /* テーブルセル */
 
     /* 行の高さ（用途別に 3 段階で使い分け） */
     --line-height-tight: 1.15;  /* 見出し（h1〜h2）：詰めた行間 */
@@ -55,6 +55,7 @@
     --logo-height-title: 65px;    /* タイトルスライドのロゴ高さ */
     --logo-right-content: 55px;   /* コンテンツスライドのロゴ・區切り線の right 基準値 */
     --logo-right-title: 80px;     /* タイトルスライドのロゴ・フッターの right 基準値 */
+    --logo-url: url('https://raw.githubusercontent.com/is0383kk/marp-template/refs/heads/main/logo.png');
 
     /* タイトルスライド固有のレイアウト */
     --title-slide-top: 200px; /* メインタイトル（h1）のスライド上端からの距離 */
@@ -292,7 +293,7 @@ section {
         right: var(--logo-right-content);
         width: var(--logo-width-content);
         height: var(--header-height);
-        background-image: url('./logo.png');
+        background-image: var(--logo-url);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: right bottom;
@@ -355,7 +356,7 @@ section.title {
         right: var(--logo-right-title);
         width: var(--logo-width-title);
         height: var(--logo-height-title);
-        background-image: url('./logo.png');
+        background-image: var(--logo-url);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: right center;
