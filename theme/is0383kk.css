@@ -55,7 +55,8 @@
     --logo-height-title: 65px;    /* タイトルスライドのロゴ高さ */
     --logo-right-content: 55px;   /* コンテンツスライドのロゴ・區切り線の right 基準値 */
     --logo-right-title: 80px;     /* タイトルスライドのロゴ・フッターの right 基準値 */
-    --logo-url: url('https://raw.githubusercontent.com/is0383kk/marp-template/refs/heads/main/logo.png');
+    /*--logo-url: url('https://raw.githubusercontent.com/is0383kk/marp-template/refs/heads/main/logo.png');*/
+    --logo-url: url('https://mermaid.ink/svg/pako:eNo9UEFugzAQ_AqaUytRhDHGsa-Ncuu5UuWLg7eAEnDk2FJaxN8LVO2eZnY0O5qd0XpH0DhffXt5OVO0ZsqydKfwZHAKNrns3ca2N3jeBOTowuCgY0iUY6Qw2o1i3lSD2NNIBnqFgVx6GJhpWU03O314P_75gk9dD_1pr_eVpZuzkY6D7YId_7eBJkfh1acpQjPGmv0K9IwHtORFrURVcaVUWfG6zvEFzaUohOIlk0IeWCWWHN97alkcpCjXYbxRTSUky0FuiD68_dbfv7D8AIIeUe0');
 
     /* タイトルスライド固有のレイアウト */
     --title-slide-top: 200px; /* メインタイトル（h1）のスライド上端からの距離 */
