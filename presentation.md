@@ -2,6 +2,7 @@
 marp: true
 theme: aurora-blue
 # テーマ一覧は node scripts/list-themes.mjs で表示、npm run gallery で実物を見比べられる
+title: 詐騙巡守隊
 paginate: true
 size: 16:9
 html: true
