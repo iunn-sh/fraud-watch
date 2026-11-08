@@ -1052,8 +1052,9 @@ li {
 ---
 
 <!-- _class: column-layout -->
+<!-- _footer: "[遇到詐騙怎麼辦？詐騙報案流程總整理](https://www.pro360.com.tw/guide/scam_deal_process)" -->
 
-# [案件通常處理流程](https://www.pro360.com.tw/guide/scam_deal_process)
+# 案件通常處理流程
 
 <div class="column">
 
