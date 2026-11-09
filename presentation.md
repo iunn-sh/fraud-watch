@@ -14,6 +14,8 @@ paginate: true
 
 認識風險，為未來生活做好準備
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1"></script>
+
 ---
 
 # 法治教育走進矯正機關計畫
@@ -44,6 +46,15 @@ paginate: true
 
 - 常見詐騙手法
 - 案例統計
+
+---
+
+# [GASA與Whoscall共同發布《2026亞洲詐騙調查報告：台灣篇》](https://whoscall.com/zh-hant/blog/articles/2247-State-of-Scams-in-Taiwan-2026)
+Whoscall 2026.08.26
+
+根據《2026亞洲詐騙調查報告》指出，<mark>有75%的民眾在過去一年曾遭遇詐騙情境</mark>。其中有52%選擇與詐騙集團進行互動，更有23%因互動而被騙錢、12%曾提供個人資訊。未進一步互動的主要原因包含「原則上不回應陌生訊息（42%）」、「訊息看似不合常理（41%）」及「優惠太好而不切實際（37%）」。此外，亦有18%的家長指出其子女曾遭到詐騙，顯示詐騙威脅藉由遊戲、網購等數位場景滲透，已延伸至青少年與未成年族群。
+
+在金錢損失的詐騙受害者中，「二次受害」已成為不可忽視的防詐漏洞。數據顯示，<mark>在過去12個月內曾因詐騙而損失金錢的受害者中，高達45%的台灣成年受害者表示自己受騙不止一次</mark>，平均每位受害者遭遇財損的次數高達2次。具體次數統計指出，雖然有50%的受害者僅受騙一次，但有23%被騙二次、9%被騙三次、4%被騙四次、1%被騙五次，更有8%的受害者遭遇超過五次以上的詐騙。這項數據警示，詐騙集團傾向於針對重複受害者，凸顯出防詐教育不能僅止於一次性宣導，更需加強對已受害群體提供後續跟蹤與保護。
 
 ---
 
@@ -476,6 +487,157 @@ ul {
 
 #### 基層
 需在外拋頭露面，是整個詐騙集團中最容易遭查獲、取代性也最高的成員，所以也是集團最有可能誘使民眾前往擔任的角色。
+
+---
+
+<!-- _footer: "[法務統計 2022-2026](https://www.rjsd.moj.gov.tw/RJSDWeb/visualize/Visualization.aspx?kind=PC&d=12)" -->
+
+<style scoped>
+div {
+  height: 85%;
+  width: 100%;
+}
+</style>
+
+# 電信網路詐欺案件 — 地檢署偵查起訴人數
+
+<div align="center">
+  <canvas id="barChartProsecute"></canvas>
+</div>
+
+<script>
+  const ctxProsecute = document.getElementById('barChartProsecute');
+
+  new Chart(ctxProsecute, {
+    type: 'bar',
+    data: {
+      labels: ['2022', '2023', '2024', '2025', '2026.01-08'],
+      datasets: [{
+        label: '單純提供人頭帳戶（1-8月）',
+        data: [20169, 26224, 18908, 21411, 19429],
+        stack: '人頭帳戶',
+        order: 1,
+        borderWidth: 1
+      },
+      {
+        label: '單純提供人頭帳戶（9-12月）',
+        data: [(32698-20169), (40942-26224), (28732-18908), (32552-21411), 0],
+        stack: '人頭帳戶',
+        order: 2,
+        borderWidth: 1
+      },
+      {
+        label: '一般電信詐欺（1-8月）',
+        data: [12365, 16958, 19250, 20526, 20170],
+        stack: '一般電信詐欺',
+        order: 3,
+        borderWidth: 1
+      },
+      {
+        label: '一般電信詐欺（9-12月）',
+        data: [(20045-12365), (27025-16958), (28597-19250), (30559-20526), 0],
+        stack: '一般電信詐欺',
+        order: 4,
+        borderWidth: 1
+      },
+      {
+        label: '單純車手（1-8月）',
+        data: [5663, 4747, 10798, 23612, 28653],
+        stack: '車手',
+        order: 5,
+        borderWidth: 1
+      },
+      {
+        label: '單純車手（9-12月）',
+        data: [(8027-5663), (8516-4747), (20003-10798), (39611-23612), 0],
+        stack: '車手',
+        order: 6,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true,
+          beginAtZero: true,
+          max: 45000,
+          title: {
+            display: true,
+            text: '人',
+          }
+        }
+      }
+    }
+  });
+</script>
+
+---
+
+<!-- _footer: "[法務統計 2022-2026](https://www.rjsd.moj.gov.tw/RJSDWeb/visualize/Visualization.aspx?kind=PC&d=12)" -->
+
+<style scoped>
+div {
+  height: 85%;
+  width: 100%;
+}
+</style>
+
+# 電信網路詐欺案件 — 地檢署偵查起訴人數
+
+<div align="center">
+  <canvas id="barChartProsecutePartial"></canvas>
+</div>
+
+<script>
+  const ctxProsecutePartial = document.getElementById('barChartProsecutePartial');
+
+  new Chart(ctxProsecutePartial, {
+    type: 'bar',
+    data: {
+      labels: ['2022', '2023', '2024', '2025', '2026.01-08'],
+      datasets: [{
+        label: '單純提供人頭帳戶（1-8月）',
+        data: [20169, 26224, 18908, 21411, 19429],
+        stack: '人頭帳戶',
+        order: 1,
+        borderWidth: 1
+      },
+      {
+        label: '一般電信詐欺（1-8月）',
+        data: [12365, 16958, 19250, 20526, 20170],
+        stack: '一般電信詐欺',
+        order: 3,
+        borderWidth: 1
+      },
+      {
+        label: '單純車手（1-8月）',
+        data: [5663, 4747, 10798, 23612, 28653],
+        stack: '車手',
+        order: 5,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true,
+          beginAtZero: true,
+          // max: 45000,
+          title: {
+            display: true,
+            text: '人',
+          }
+        }
+      }
+    }
+  });
+</script>
 
 ---
 

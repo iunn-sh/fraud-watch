@@ -5,6 +5,7 @@
 
 * Framework [marp-team/marp-cli](https://github.com/marp-team/marp-cli)
 * Theme [is0383kk/marp-template](https://github.com/is0383kk/marp-template)
+* Chart [chartjs/Chart.js](https://github.com/chartjs/Chart.js)
 * Font [源樣黑體 TW](https://font.emtech.cc/fonts/GenYoGothicTW)
 * Font [JetBrains Mono](https://font.emtech.cc/fonts/JetBrainsMono)
 * Image [Unsplash](https://unsplash.com/)
