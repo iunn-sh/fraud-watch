@@ -513,43 +513,43 @@ div {
     data: {
       labels: ['2022', '2023', '2024', '2025', '2026'],
       datasets: [{
-        label: '單純提供人頭帳戶（1-8月）',
-        data: [20169, 26224, 18908, 21411, 19429],
+        label: '單純提供人頭帳戶（1-9月）',
+        data: [22996, 29669, 21144, 24121, 21280],
         stack: '人頭帳戶',
         order: 1,
         borderWidth: 1
       },
       {
-        label: '單純提供人頭帳戶（9-12月）',
-        data: [(32698-20169), (40942-26224), (28732-18908), (32552-21411), 0],
+        label: '單純提供人頭帳戶（10-12月）',
+        data: [(32698-22996), (40942-29669), (28732-21144), (32552-24121), 0],
         stack: '人頭帳戶',
         order: 2,
         borderWidth: 1
       },
       {
-        label: '一般電信詐欺（1-8月）',
-        data: [12365, 16958, 19250, 20526, 20170],
+        label: '一般電信詐欺（1-9月）',
+        data: [14028, 19150, 21501, 22596, 22399],
         stack: '一般電信詐欺',
         order: 3,
         borderWidth: 1
       },
       {
-        label: '一般電信詐欺（9-12月）',
-        data: [(20045-12365), (27025-16958), (28597-19250), (30559-20526), 0],
+        label: '一般電信詐欺（10-12月）',
+        data: [(20045-14028), (27025-19150), (28597-21501), (30559-22596), 0],
         stack: '一般電信詐欺',
         order: 4,
         borderWidth: 1
       },
       {
-        label: '單純車手（1-8月）',
-        data: [5663, 4747, 10798, 23612, 28653],
+        label: '單純車手（1-9月）',
+        data: [6177, 5441, 12727, 27109, 31976],
         stack: '車手',
         order: 5,
         borderWidth: 1
       },
       {
-        label: '單純車手（9-12月）',
-        data: [(8027-5663), (8516-4747), (20003-10798), (39611-23612), 0],
+        label: '單純車手（10-12月）',
+        data: [(8027-6177), (8516-5441), (20003-12727), (39611-27109), 0],
         stack: '車手',
         order: 6,
         borderWidth: 1
@@ -564,71 +564,6 @@ div {
           stacked: true,
           beginAtZero: true,
           max: 45000,
-          title: {
-            display: true,
-            text: '人',
-          }
-        }
-      }
-    }
-  });
-</script>
-
----
-
-<!-- _footer: "[法務統計 2022-2026](https://www.rjsd.moj.gov.tw/RJSDWeb/visualize/Visualization.aspx?kind=PC&d=12)" -->
-
-<style scoped>
-div {
-  height: 85%;
-  width: 100%;
-}
-</style>
-
-# 電信網路詐欺案件 — 地檢署偵查起訴人數
-
-<div align="center">
-  <canvas id="barChartProsecutePartial"></canvas>
-</div>
-
-<script>
-  const ctxProsecutePartial = document.getElementById('barChartProsecutePartial');
-
-  new Chart(ctxProsecutePartial, {
-    type: 'bar',
-    data: {
-      labels: ['2022', '2023', '2024', '2025', '2026'],
-      datasets: [{
-        label: '單純提供人頭帳戶（1-8月）',
-        data: [20169, 26224, 18908, 21411, 19429],
-        stack: '人頭帳戶',
-        order: 1,
-        borderWidth: 1
-      },
-      {
-        label: '一般電信詐欺（1-8月）',
-        data: [12365, 16958, 19250, 20526, 20170],
-        stack: '一般電信詐欺',
-        order: 3,
-        borderWidth: 1
-      },
-      {
-        label: '單純車手（1-8月）',
-        data: [5663, 4747, 10798, 23612, 28653],
-        stack: '車手',
-        order: 5,
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        x: {
-          stacked: true,
-        },
-        y: {
-          stacked: true,
-          beginAtZero: true,
-          // max: 45000,
           title: {
             display: true,
             text: '人',
